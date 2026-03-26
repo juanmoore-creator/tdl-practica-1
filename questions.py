@@ -9,7 +9,25 @@ words = [
     "entero",
     "lista",
     ]
+
+# Diccionario de categorías
+categorias = {
+    "Programación": ["python", "variable", "funcion", "bucle"],
+    "Tipos de Datos": ["entero", "cadena", "lista", "booleano"],
+    "Herramientas": ["git", "github", "terminal", "editor"]
+}
+
+print("Categorías disponibles:")
+for cat in categorias.keys():
+    print(f"- {cat}")
+
+seleccion = input("Elegí una categoría (se debe escribir el nombre exacto respetando mayúsculas y tíldes): ")
+while seleccion not in categorias:
+    seleccion = input("Categoría no válida. Elegí una de la lista: ")
+
+words = categorias[seleccion]
 word = random.choice(words)
+
 guessed = []
 attempts = 6
 print("¡Bienvenido al Ahorcado!")
